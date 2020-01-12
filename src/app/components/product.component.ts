@@ -11,6 +11,8 @@ export class ProductComponent {
   @Input() product: Product;
   @Output() productClicked: EventEmitter<any> = new EventEmitter();
 
+  today = new Date();
+
   addToCart() {
     console.log('add to car');
     this.productClicked.emit(this.product.id);
