@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Input, Output, EventEmitter } from "@angular/core";
 
 import { Product } from "../product.model";
 
@@ -7,11 +7,11 @@ import { Product } from "../product.model";
   templateUrl: "./product.component.html"
 })
 export class ProductComponent {
-  product: Product = {
-    id: "1",
-    image: "assets/images/3dPrinter.png",
-    title: "3D Pritner",
-    price: 10000,
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-  };
+  @Input() product: Product;
+  @Output() productClicked: EventEmitter<any> = new EventEmitter();
+
+  addToCart() {
+    console.log("add to car");
+    this.productClicked.emit(this.product.id);
+  }
 }
