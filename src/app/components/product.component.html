@@ -4,3 +4,4 @@
 <p>{{ product.description }}</p>
 <p>{{ today | date:'medium' }}</p>
 <button (click)="addToCart()">Add to car</button>
+<a [routerLink]="['/products', product.id]">See detail</a>
