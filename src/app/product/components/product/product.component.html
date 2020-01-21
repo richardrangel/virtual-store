@@ -1,7 +1,17 @@
-<h3>{{ product.title }}</h3>
-<img [src]="product.image" alt="product image">
-<strong>{{ product.price | currency }}</strong>
-<p>{{ product.description }}</p>
-<p>{{ today | date:'medium' }}</p>
-<button (click)="addToCart()" mat-raised-button color="primary">Add to car</button>
-<a [routerLink]="['/products', product.id]">See detail</a>
+<mat-card class="space">
+    <mat-card-header>
+        <mat-card-title>{{ product.title }}</mat-card-title>
+        <mat-card-subtitle>{{ product.price | currency }}</mat-card-subtitle>
+    </mat-card-header>
+    <div class="crop-image">
+        <img [src]="product.image" alt="product image">
+    </div>
+    <mat-card-content>
+        <p>{{ product.description }}</p>
+        <p>{{ today | date:'medium' }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+        <a mat-raised-button [routerLink]="['/products', product.id]">See detail</a>
+        <button (click)="addToCart()" mat-raised-button color="primary">Add to car</button>
+    </mat-card-actions>
+</mat-card>
