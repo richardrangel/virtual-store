@@ -1,0 +1,16 @@
+@import '~@angular/material/theming';
+
+$primary: mat-palette($mat-indigo);
+
+footer {
+  margin-top: 20px;
+  padding: 15px 0px;
+  background-color: mat-color($primary);
+  .box {
+    h3 {
+      color: white;
+      text-align: center;
+      font-size: 13px;
+        }
+    }
+}
